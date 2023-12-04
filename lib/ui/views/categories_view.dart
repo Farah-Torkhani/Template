@@ -40,16 +40,16 @@ class _CategoriesViewState extends State<CategoriesView> {
           PaginatedDataTable(
             columns: [
               DataColumn(label: Text('ID')),
-              DataColumn(label: Text('Categorías')),
+              DataColumn(label: Text('Categorys')),
               DataColumn(label: Text('Creado por')),
-              DataColumn(label: Text('Acciones')),
+              DataColumn(label: Text('Actions')),
             ],
             source: CategoriesDTS(
               categorias: categorias,
               context: context,
             ),
             header: Text(
-              'Categorías disponibles',
+              'Categories  disponibles',
               maxLines: 2,
             ),
             onRowsPerPageChanged: (value) {

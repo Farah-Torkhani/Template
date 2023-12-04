@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/ui/views/guide_view.dart';
 import 'package:fluro/fluro.dart';
 import 'package:provider/provider.dart';
 
@@ -47,6 +48,17 @@ class DashboardHandlers {
 
     if (authProvider.authStatus == AuthStatus.authenticated)
       return CategoriesView();
+    else
+      return LoginView();
+  });
+
+  static Handler guides = Handler(handlerFunc: (context, params) {
+    final authProvider = Provider.of<AuthProvider>(context!);
+    Provider.of<SideMenuProvider>(context, listen: false)
+        .setCurrentPageUrl(Flurorouter.guidesRoute);
+
+    if (authProvider.authStatus == AuthStatus.authenticated)
+      return GuidesView();
     else
       return LoginView();
   });
